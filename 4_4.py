@@ -2,11 +2,11 @@ import math
 import multiprocessing
 import time
 
+NUM_PROCESSES = multiprocessing.cpu_count()
+#NUM_PROCESSES = 8  
 
-NUM_PROCESSES = 8  
-
-START_range = int(math.pow(10, 5))
-END_range = int(math.pow(10, 6))
+START_range = int(math.pow(10,1))
+END_range = int(math.pow(10, 4))
 
 def find_numbers_in_range(start, end):
 
@@ -22,7 +22,7 @@ def find_numbers_in_range(start, end):
                     c += 1
                 else:
                     c += 2
-            if c > 4:
+            if c > 3:
                 break
         if c == 3:
             found.append(i)
